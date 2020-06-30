@@ -24,7 +24,8 @@
                     <h2 class="title">Create Blog</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST"> {% csrf_token %}
+                    <form method="POST" enctype="multipart/form-data" > {% csrf_token %}
+                        <!-- {{ form.picture.as_p }} -->
                         <div class="form-row">
                             <div class="name" style="font-size: 25px;">Title</div>
                             <div class="value">
@@ -39,17 +40,21 @@
                                 </div>
                             </div>
                         </div> -->
-                        <!-- <div class="form-row">
+                        <div class="form-row">
                             <div class="name">Upload Thumbnail</div>
+                            <!-- {{ form.picture.as_p }} -->
                             <div class="value">
                                 <div class="input-group js-input-file">
-                                    <input class="input-file" type="file" name="picture" id="file">
+                                    <!-- <input class="input-file" type="file" name="picture" id="file">
                                     <label class="label--file" for="file">Choose file</label>
-                                    <span class="input-file__info">No file chosen</span>
+                                    <span class="input-file__info">No file chosen</span> -->
+                                    <input  type="file" name="picture" />
+                                    
                                 </div>
+                                
                                 <div class="label--desc">Upload your Thumbnail. Max file size 50 MB</div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="form-row">
                             <div class="name" style="font-size: 25px;">Content</div>
                             <div class="value">

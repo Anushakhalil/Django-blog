@@ -137,9 +137,9 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="main_blog_details">
-                        <!-- <img class="img-fluid" src="{% static 'img/blog/news-blog.jpg' %}" alt=""> -->
+                        <img class="img-fluid" src="{{ obj.picture.url }}" alt="">
                         
-                            <h4>Cartridge Is Better Than Ever A Discount Toner</h4>
+                            <h4> {{ obj.title }} </h4>
                         <div class="user_details">
                             <div class="float-left">
                                 <!-- <a href="#">Lifestyle</a>
@@ -157,7 +157,11 @@
                                 </div>
                             </div>
                         </div>
-                        <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why
+                        <p> {{ obj.content }}  </p>
+
+
+
+                        <!-- <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why
                             you
                             should have to spend money on boot camp when you can get the MCSE study materials yourself
                             at
@@ -187,7 +191,7 @@
                             you
                             should have to spend money on boot camp when you can get the MCSE study materials yourself
                             at
-                            a fraction of the camp price. However, who has the willpower</p>
+                            a fraction of the camp price. However, who has the willpower</p> -->
                         <div class="news_d_footer">
                             <a href="#"><i class="lnr lnr lnr-heart"></i>Lily and 4 people like this</a>
                             <a class="justify-content-center ml-auto" href="#"><i class="lnr lnr lnr-bubble"></i>06

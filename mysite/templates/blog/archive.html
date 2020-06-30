@@ -59,9 +59,7 @@
 									<li class="nav-item">
 										<a class="nav-link" href="{% url 'elements' %}">Elements</a>
 									</li>
-									<!-- <li class="nav-item">
-										<a class="nav-link" href="{% url 'single-blog' %}">Post Details</a>
-									</li> -->
+									
 								</ul>
 							</li>
 							<li class="nav-item">
@@ -122,15 +120,17 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="row">
+
+						{% for i in objs %}
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<div class="single_travel wow fadeInUp" data-wow-duration="1s">
 								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c2.jpg' %}" alt="">
+									<img class="img-fluid w-100" src="{{ i.picture.url }}" alt="">
 								</figure>
 								<div class="overlay"></div>
 								<div class="text-wrap">
 									<h3>
-										<a href="#">Waterfall Travel</a>
+										<a href="#">{{ i.title }}</a>
 									</h3>
 									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
 										<div class="meta">
@@ -140,179 +140,14 @@
 											</a>
 										</div>
 										<div>
-											<a class="read_more" href="#">Read More</a>
+											<a class="read_more" href='{{ i.get_absolute_url }}'>Read More</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c3.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c5.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c6.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c2.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c3.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c5.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<div class="single_travel wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
-								<figure>
-									<img class="img-fluid w-100" src="{% static 'img/category/c6.jpg' %}" alt="">
-								</figure>
-								<div class="overlay"></div>
-								<div class="text-wrap">
-									<h3>
-										<a href="#">Waterfall Travel</a>
-									</h3>
-									<div class="blog-meta white d-flex justify-content-between align-items-center flex-wrap">
-										<div class="meta">
-											<a href="#">
-												<span class="icon fa fa-calendar"></span> March 14, 2018
-												<span class="icon fa fa-comments"></span> 05
-											</a>
-										</div>
-										<div>
-											<a class="read_more" href="#">Read More</a>
-										</div>
-									</div>
-								</div>
-							</div>
+						{% endfor %}
+						
 						</div>
 					</div>
 

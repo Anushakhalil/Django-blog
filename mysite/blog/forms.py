@@ -9,7 +9,7 @@ class BlogModelForm(forms.ModelForm):
         fields = [  # ye model form ban gae ab isay render krengy or view krengy
             'title',
             'content',
-            # 'picture',
+            'picture',
         ]
 
  

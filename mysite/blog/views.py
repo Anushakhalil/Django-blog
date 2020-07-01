@@ -46,7 +46,18 @@ def category_view(request, *args, **kwargs):
 def create_view(request, *args, **kwargs):
     form = BlogModelForm(request.POST, request.FILES)
 
+    # if request.user.is_authenticated:
+    form.fields['blogger'] = request.user.Username
+
+    
+
     if form.is_valid():
+        # 
+
+        # from datetime import datetime
+        # now = datetime.now()
+        # form.date = str(now.strftime("%m/%d/%Y"))
+        # form.time = str(now.strftime("%H:%M:%S"))
         # print("SAVE HOGYAAAAAAAAAAA")
         form.save()
         return redirect('archive')
@@ -56,7 +67,9 @@ def create_view(request, *args, **kwargs):
         # mod.save()
 
     context = {
-        "form": form
+        "title": form.fields['title'],
+        "picture": form.fields['picture'],
+        "content": form.fields['content']
     }
     return render(request, "blogs/index.html", context)
 

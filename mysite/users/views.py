@@ -9,22 +9,59 @@ from .forms import CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
+
+from blogger.models import Blogger
+from blogger.forms import CreateBloggerForm
+
+from django.contrib.auth.models import User
+
 
 
 def registerPage(request):
+    form = CreateUserForm(request.POST)
+    # form2 = CreateBloggerForm(request.POST , request.FILES)
+
     if request.user.is_authenticated:
         return redirect('home')
+        
     else:
-        form = CreateUserForm
+        # form = CreateUserForm
+        # form2 = CreateBloggerForm
         if request.method == "POST":
-            form = CreateUserForm(request.POST)
+            
+
             if form.is_valid():
-                form.save()
-                user = form.cleaned_data.get('username')
+
+                
+
+                user = form.save()
+                username = form.cleaned_data.get('username')
                 # messages.success(request, 'This is the account for' + user)
+                group = Group.objects.get(name="blogger")
+                user.groups.add(group)
+                Blogger.objects.create(
+                    user=user,
+                    username = username
+                    
+                )
+                
+
+
                 return redirect('login')
 
-    context = {'form': form}
+            # form2.fields['username'] = "helloUSER"
+            # form2.fields['user'] = User.objects.get(id = 1)
+            # if form2.is_valid():
+            #     print("FORM 2 is valid")
+            # else:
+            #     print("Nothing")
+                    # picture = form2.cleaned_data.get('pic')
+
+                    #
+        
+
+    context = {'form': form  }
     return render(request, "users/signup.html", context)
 
 

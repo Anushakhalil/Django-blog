@@ -10,7 +10,8 @@ class BlogModelForm(forms.ModelForm):
             'title',
             'content',
             'picture',
-            'blogger',
+            'cat'
+            # 'blogger',
             # 'datetime'
         ]
 

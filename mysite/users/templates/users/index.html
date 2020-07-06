@@ -26,6 +26,8 @@
 
     <!-- Main CSS-->
     <link href="{% static 'users/css/main.css' %}" rel="stylesheet" media="all">
+
+    <link href="{% static 'blogs/css/main.css' %}" rel="stylesheet" media="all">
     <style>
 
         .nechyKaGroup{
@@ -67,6 +69,18 @@
 <!--                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>-->
 <!--                        </div>-->
                         <div class="input-group">
+                            <!-- <input class="input--style-3" type="text" placeholder="Username" name="username"> -->
+                           <div class="value">
+                                <div class="input-group js-input-file">
+                                    <!-- <input class="input-file" type="file" name="picture" id="file">
+                                    <label class="label--file" for="file">Choose file</label>
+                                    <span class="input-file__info">No file chosen</span> -->
+                                    <input  type="file" name="picture" />
+                                    
+                                </div>
+                        </div>
+                    </div>
+                        <div class="input-group">
                             <div class="rs-select2 js-select-simple select--no-search">
                                 <select name="gender">
                                     <option disabled="disabled" selected="selected">Gender</option>
@@ -93,7 +107,9 @@
                         {{ form.errors }}
                         <div class="nechyKaGroup">
 
+                            
                             <p class="textKaStyle"> Already have an Account? <a href="{% url 'login' %}"><b class="hT"> LOG IN </b></a> </p>
+                            
                         </div>
                     </form>
                 </div>
@@ -115,6 +131,15 @@
 
     <!-- Main JS-->
     <script src="{% static 'users/js/global.js' %}"></script>
+
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+    <script src="{% static 'dropdown/js/index.js' %}"></script>
+
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

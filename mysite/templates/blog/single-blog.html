@@ -142,14 +142,14 @@
                             <h4> {{ obj.title }} </h4>
                         <div class="user_details">
                             <div class="float-left">
-                                <!-- <a href="#">Lifestyle</a>
-                                <a href="#">Gadget</a> -->
+                                <a href="{{ obj.catKaURL }}"> {{ obj.cat }} </a>
+                                <!-- <a href="#">Gadget</a> -->
                             </div>
                             <div class="float-right">
                                 <div class="media">
                                     <div class="media-body">
-                                        <h5>{{ form.blogger.usernamr }}</h5>
-                                        <p> {{ form.date }} </p>
+                                        <h5>{{ obj.blogger }}</h5>
+                                        <p> {{ obj.datetime }} </p>
                                     </div>
                                     <div class="d-flex">
                                         <img src="{% static 'img/blog/user-img.jpg' %}" alt="">
